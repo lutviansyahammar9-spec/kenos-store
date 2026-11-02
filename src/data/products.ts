@@ -1,12 +1,35 @@
 import { ProductItem, PaymentMethodId } from '../types';
 
+// Direct asset imports so Vite compiles and bundles them safely into production build without broken paths
+import bannerTokoImg from '../assets/images/banner_toko.png';
+import bannerFreefireImg from '../assets/images/freefire/banner_freefire.png';
+import cardFreefireImg from '../assets/images/freefire/card_freefire.jpg';
+import bpCardImg from '../assets/images/freefire/bp_card.webp';
+import diamondFreefireImg from '../assets/images/freefire/diamond_freefire.png';
+import memberBulananImg from '../assets/images/freefire/member_bulanan.png';
+import memberMingguanImg from '../assets/images/freefire/member_mingguan.png';
+import ffwsThroneImg from '../assets/images/freefire/ffws_throne.png';
+import permaisuriCahayaImg from '../assets/images/freefire/permaisuri_cahaya_bundle.png';
+import scarCahayaBulanImg from '../assets/images/freefire/scar_cahaya_bulan.png';
+import sultanCahayaImg from '../assets/images/freefire/sultan_cahaya_bundle.png';
+import supergamerBundleImg from '../assets/images/freefire/supergamer_bundle.png';
+
+import robloxBannerImg from '../assets/images/roblox/roblox_banner.png';
+import robloxCardImg from '../assets/images/roblox/roblox_card.png';
+import robuxImg from '../assets/images/roblox/robux.jpg';
+
+import danaImg from '../assets/images/payment/dana.webp';
+import gopayImg from '../assets/images/payment/gopay.png';
+import qrVrenaStoreImg from '../assets/images/payment/qr_vrena_store.jpeg';
+import qrisImg from '../assets/images/payment/qris.png';
+
 export const STORE_ASSETS = {
-  storeBanner: '/PROJECT SHOP/banner toko/banner toko.png',
-  freefireBanner: '/PROJECT SHOP/freefire/MISC/banner freefire.png',
-  freefireCard: '/PROJECT SHOP/freefire/MISC/card freefire.jpg',
-  robloxBanner: '/PROJECT SHOP/roblox/roblox banner.png',
-  robloxCard: '/PROJECT SHOP/roblox/roblox card.png',
-  qrCodeImage: '/PROJECT SHOP/payment/qr vrena store.jpeg',
+  storeBanner: bannerTokoImg,
+  freefireBanner: bannerFreefireImg,
+  freefireCard: cardFreefireImg,
+  robloxBanner: robloxBannerImg,
+  robloxCard: robloxCardImg,
+  qrCodeImage: qrVrenaStoreImg,
 };
 
 export const PAYMENT_METHODS: {
@@ -19,20 +42,20 @@ export const PAYMENT_METHODS: {
   {
     id: 'qris',
     name: 'QRIS',
-    image: '/PROJECT SHOP/payment/qris.png',
+    image: qrisImg,
     description: 'Scan QRIS menggunakan aplikasi pembayaran apa saja yang mendukung QRIS (BCA, Mandiri, BRI, GoPay, OVO, DANA, dll).',
   },
   {
     id: 'dana',
     name: 'DANA',
-    image: '/PROJECT SHOP/payment/dana.webp',
+    image: danaImg,
     description: 'Transfer menggunakan aplikasi DANA ke nomor resmi Kenos Store.',
     targetNumber: '0851-1736-4018',
   },
   {
     id: 'gopay',
     name: 'GoPay',
-    image: '/PROJECT SHOP/payment/gopay.png',
+    image: gopayImg,
     description: 'Transfer menggunakan aplikasi GoPay ke nomor resmi Kenos Store.',
     targetNumber: '0851-1736-4018',
   },
@@ -45,7 +68,7 @@ export const FREE_FIRE_SPECIAL_PRODUCTS: ProductItem[] = [
     category: 'special',
     name: 'BP Card',
     price: 15500,
-    image: '/PROJECT SHOP/freefire/TOP UP/bp card.webp',
+    image: bpCardImg,
     isSoldOut: true,
     badge: 'SOLD OUT',
   },
@@ -55,7 +78,7 @@ export const FREE_FIRE_SPECIAL_PRODUCTS: ProductItem[] = [
     category: 'special',
     name: 'Member Mingguan',
     price: 10000,
-    image: '/PROJECT SHOP/freefire/TOP UP/member mingguan.png',
+    image: memberMingguanImg,
     badge: 'Tersedia',
   },
   {
@@ -64,7 +87,7 @@ export const FREE_FIRE_SPECIAL_PRODUCTS: ProductItem[] = [
     category: 'special',
     name: 'Member Bulanan',
     price: 30000,
-    image: '/PROJECT SHOP/freefire/TOP UP/member bulanan.png',
+    image: memberBulananImg,
     badge: 'Tersedia',
   },
 ];
@@ -76,7 +99,7 @@ export const FREE_FIRE_DIAMOND_PRODUCTS: ProductItem[] = [
     category: 'diamond',
     name: '70 Diamond',
     price: 5000,
-    image: '/PROJECT SHOP/freefire/TOP UP/diamond freefire.png',
+    image: diamondFreefireImg,
   },
   {
     id: 'ff-dm-140',
@@ -84,7 +107,7 @@ export const FREE_FIRE_DIAMOND_PRODUCTS: ProductItem[] = [
     category: 'diamond',
     name: '140 Diamond',
     price: 10000,
-    image: '/PROJECT SHOP/freefire/TOP UP/diamond freefire.png',
+    image: diamondFreefireImg,
   },
   {
     id: 'ff-dm-210',
@@ -92,7 +115,7 @@ export const FREE_FIRE_DIAMOND_PRODUCTS: ProductItem[] = [
     category: 'diamond',
     name: '210 Diamond',
     price: 15000,
-    image: '/PROJECT SHOP/freefire/TOP UP/diamond freefire.png',
+    image: diamondFreefireImg,
   },
   {
     id: 'ff-dm-355',
@@ -100,7 +123,7 @@ export const FREE_FIRE_DIAMOND_PRODUCTS: ProductItem[] = [
     category: 'diamond',
     name: '355 Diamond',
     price: 23000,
-    image: '/PROJECT SHOP/freefire/TOP UP/diamond freefire.png',
+    image: diamondFreefireImg,
   },
   {
     id: 'ff-dm-720',
@@ -108,7 +131,7 @@ export const FREE_FIRE_DIAMOND_PRODUCTS: ProductItem[] = [
     category: 'diamond',
     name: '720 Diamond',
     price: 32000,
-    image: '/PROJECT SHOP/freefire/TOP UP/diamond freefire.png',
+    image: diamondFreefireImg,
   },
   {
     id: 'ff-dm-1000-promo',
@@ -117,7 +140,7 @@ export const FREE_FIRE_DIAMOND_PRODUCTS: ProductItem[] = [
     name: '1000 Diamond',
     price: 20000,
     originalPrice: 45000,
-    image: '/PROJECT SHOP/freefire/TOP UP/diamond freefire.png',
+    image: diamondFreefireImg,
     isPromo: true,
     promoStock: 12,
     badge: 'PROMO SPESIAL',
@@ -131,15 +154,9 @@ export const FREE_FIRE_GIFT_PRODUCTS: ProductItem[] = [
     category: 'gift',
     name: 'FFWS Throne',
     price: 30000,
-    image: '/PROJECT SHOP/freefire/JASA GIFT IN GAME/ffws throne.png',
-  },
-  {
-    id: 'ff-gift-scar',
-    gameId: 'freefire',
-    category: 'gift',
-    name: 'SCAR Cahaya Bulan',
-    price: 15000,
-    image: '/PROJECT SHOP/freefire/JASA GIFT IN GAME/scar cahaya bulan.png',
+    image: ffwsThroneImg,
+    badge: 'Paling Banyak Dibeli',
+    isOrangeBundle: true,
   },
   {
     id: 'ff-gift-supergamer',
@@ -147,7 +164,17 @@ export const FREE_FIRE_GIFT_PRODUCTS: ProductItem[] = [
     category: 'gift',
     name: 'Supergamer Bundle',
     price: 25000,
-    image: '/PROJECT SHOP/freefire/JASA GIFT IN GAME/supergamer bundle.png',
+    image: supergamerBundleImg,
+    badge: 'Paling Banyak Dibeli',
+    isOrangeBundle: true,
+  },
+  {
+    id: 'ff-gift-scar',
+    gameId: 'freefire',
+    category: 'gift',
+    name: 'SCAR Cahaya Bulan',
+    price: 15000,
+    image: scarCahayaBulanImg,
   },
   {
     id: 'ff-gift-sultan',
@@ -155,7 +182,7 @@ export const FREE_FIRE_GIFT_PRODUCTS: ProductItem[] = [
     category: 'gift',
     name: 'Sultan Cahaya Bundle',
     price: 5000,
-    image: '/PROJECT SHOP/freefire/JASA GIFT IN GAME/sultan cahaya bundle.png',
+    image: sultanCahayaImg,
   },
   {
     id: 'ff-gift-permaisuri',
@@ -163,7 +190,7 @@ export const FREE_FIRE_GIFT_PRODUCTS: ProductItem[] = [
     category: 'gift',
     name: 'Permaisuri Cahaya Bundle',
     price: 5000,
-    image: '/PROJECT SHOP/freefire/JASA GIFT IN GAME/permaisuri cahaya bundle.png',
+    image: permaisuriCahayaImg,
   },
 ];
 
@@ -174,7 +201,7 @@ export const ROBLOX_PRODUCTS: ProductItem[] = [
     category: 'robux',
     name: '80 Robux',
     price: 5000,
-    image: '/PROJECT SHOP/roblox/robux.jpg',
+    image: robuxImg,
   },
   {
     id: 'rbx-160',
@@ -182,7 +209,7 @@ export const ROBLOX_PRODUCTS: ProductItem[] = [
     category: 'robux',
     name: '160 Robux',
     price: 10000,
-    image: '/PROJECT SHOP/roblox/robux.jpg',
+    image: robuxImg,
   },
   {
     id: 'rbx-220',
@@ -190,7 +217,7 @@ export const ROBLOX_PRODUCTS: ProductItem[] = [
     category: 'robux',
     name: '220 Robux',
     price: 15000,
-    image: '/PROJECT SHOP/roblox/robux.jpg',
+    image: robuxImg,
   },
   {
     id: 'rbx-350',
@@ -198,7 +225,7 @@ export const ROBLOX_PRODUCTS: ProductItem[] = [
     category: 'robux',
     name: '350 Robux',
     price: 20000,
-    image: '/PROJECT SHOP/roblox/robux.jpg',
+    image: robuxImg,
   },
 ];
 

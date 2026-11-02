@@ -308,9 +308,10 @@ export const FreeFireView: React.FC<FreeFireViewProps> = ({
           </h3>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 pt-2">
           {FREE_FIRE_GIFT_PRODUCTS.map((product) => {
             const isSelected = selectedProduct?.id === product.id;
+            const isOrange = product.isOrangeBundle;
 
             return (
               <button
@@ -318,22 +319,37 @@ export const FreeFireView: React.FC<FreeFireViewProps> = ({
                 type="button"
                 onClick={() => onSelectProduct(product)}
                 className={`relative group p-2.5 rounded-xl border text-center transition-all duration-150 flex flex-col items-center justify-between ${
-                  isSelected
+                  isOrange
+                    ? isSelected
+                      ? 'border-orange-500 bg-orange-950/70 shadow-lg shadow-orange-500/20 ring-1 ring-orange-400 scale-[1.02]'
+                      : 'border-orange-500/70 bg-gradient-to-b from-orange-950/40 via-slate-900 to-slate-900 hover:border-orange-400 shadow-sm'
+                    : isSelected
                     ? 'bg-indigo-950/60 border-indigo-400 shadow-md ring-1 ring-indigo-400'
                     : 'bg-slate-900/80 dark:bg-slate-900/80 light:bg-white border-slate-800 hover:border-slate-700'
                 }`}
               >
+                {/* Orange Bundle Badge: Paling Banyak Dibeli */}
+                {isOrange && (
+                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[8px] font-black bg-gradient-to-r from-orange-500 to-amber-400 text-slate-950 shadow-md whitespace-nowrap flex items-center gap-0.5 z-10 border border-orange-300/40">
+                    <Flame className="w-2.5 h-2.5 fill-current" />
+                    <span>Paling Banyak Dibeli</span>
+                  </div>
+                )}
+
                 {isSelected && (
-                  <div className="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-indigo-500 text-white flex items-center justify-center">
+                  <div className={`absolute top-1.5 right-1.5 w-4 h-4 rounded-full flex items-center justify-center ${
+                    isOrange ? 'bg-orange-500 text-slate-950' : 'bg-indigo-500 text-white'
+                  }`}>
                     <Check className="w-2.5 h-2.5 stroke-[3]" />
                   </div>
                 )}
 
-                <div className="w-12 h-12 mb-1 flex items-center justify-center">
+                <div className={`w-12 h-12 mb-1 flex items-center justify-center ${isOrange ? 'mt-1' : ''}`}>
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full object-contain filter drop-shadow"
+                    loading="lazy"
                   />
                 </div>
 
@@ -341,7 +357,9 @@ export const FreeFireView: React.FC<FreeFireViewProps> = ({
                   <h4 className="text-[11px] font-bold text-white dark:text-white light:text-slate-900 truncate">
                     {product.name}
                   </h4>
-                  <div className="text-xs font-extrabold text-indigo-400 dark:text-indigo-400 light:text-indigo-600 mt-0.5">
+                  <div className={`text-xs font-extrabold mt-0.5 ${
+                    isOrange ? 'text-orange-400 font-black' : 'text-indigo-400 dark:text-indigo-400 light:text-indigo-600'
+                  }`}>
                     {formatRupiah(product.price)}
                   </div>
                 </div>

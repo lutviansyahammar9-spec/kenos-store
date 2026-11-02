@@ -26,6 +26,7 @@ export interface ProductItem {
   isPromo?: boolean;
   promoStock?: number;
   badge?: string;
+  isOrangeBundle?: boolean;
 }
 
 export interface OrderAccountData {
