@@ -1,0 +1,6 @@
+{
+  "name": "Kenos Store - Top Up Game & Digital Store",
+  "description": "Kenos Store: Platform top up game resmi dan terpercaya untuk Free Fire dan Roblox dengan pembayaran instan QRIS, DANA, dan GoPay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
